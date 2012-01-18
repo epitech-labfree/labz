@@ -4,6 +4,9 @@ class Ability
   def initialize(user)
     # Define abilities for the passed in user here. For example:
     #
+    can :show, User, :id => "me" if user
+    can :show, User, :id => user.id if user
+
     user ||= User.new # guest user (not logged in)
     if user.in_group? :root
       can :manage, :all

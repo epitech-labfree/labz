@@ -4,11 +4,7 @@ LilAuth::Application.routes.draw do
   resources :oauth_clients
 
   devise_for :users
-  devise_scope :user do
-    get '/login' => 'devise/sessions#new'
-    get '/logout' => 'devise/sessions#destroy'
-  end
-  resources :user, :controller => :user
+  resources :users
 
   match '/oauth/test_request',  :to => 'oauth#test_request',  :as => :test_request
   match '/oauth/token',         :to => 'oauth#token',         :as => :token

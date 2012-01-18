@@ -1,5 +1,6 @@
 require 'oauth/controllers/provider_controller'
 class OauthController < ApplicationController
+  before_filter :print_all
   include OAuth::Controllers::ProviderController
 
   protected
@@ -22,5 +23,11 @@ class OauthController < ApplicationController
 
   alias :logged_in? :user_signed_in?
   alias :login_required :authenticate_user!
+
+  def print_all
+    request.env.each { |k, v| Rails.logger.warn "#{k} => #{v}" if k =~ /uth/}
+    request.headers.each { |k, v| Rails.logger.warn "||| #{k} => #{v}" }
+    true
+  end
 
 end
