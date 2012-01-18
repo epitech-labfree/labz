@@ -39,6 +39,7 @@ gem "devise"
 gem "oauth-plugin", ">= 0.4.0.pre1"
 gem "haml"
 gem "cancan"
+gem "therubyracer"
 
 group :dev do
   gem "haml-rails"
