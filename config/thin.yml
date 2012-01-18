@@ -1,0 +1,15 @@
+--- 
+chdir: /home/oauth/lil_auth
+environment: development
+timeout: 30
+log: log/thin.log
+pid: tmp/pids/thin-oauth.pid
+max_conns: 1024
+max_persistent_conns: 512
+require: []
+
+wait: 15
+servers: 5
+socket: tmp/sockets/thin.sock
+daemonize: true
+prefix: /oauth

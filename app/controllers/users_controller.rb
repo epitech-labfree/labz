@@ -9,6 +9,16 @@ class UsersController < ApplicationController
   def show
     params[:id] = current_user.id if current_user and params[:id] == 'me'
     @user = User.find(params[:id])
+
+    respond_to do |format|
+      format.html
+      format.json do
+        u = { :login => @user.email.split('@')[0],
+          :groups => @user.groups.map {|g| g.name} }
+        render :json => u
+      end
+    end
+
   end
 
   def new
