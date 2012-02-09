@@ -44,7 +44,8 @@ gem "therubyracer"
 group :dev do
   gem "haml-rails"
   gem "nifty-generators"
+  gem "hpricot"
+  gem "ruby_parser"
 end
-
 
 gem "mocha", :group => :test

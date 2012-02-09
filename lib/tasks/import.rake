@@ -14,7 +14,7 @@ namespace :import do
         puts infos[1]
 
         begin
-          u = User.new :email => "#{infos[0]}@epitech.eu", :password => "123456"
+          u = User.new :login => infos[0],  :email => "#{infos[0]}@epitech.eu", :password => "isresetjustbelow"
           u.encrypted_password = infos[1]
           u.save!
         rescue

@@ -1,0 +1,29 @@
+- title "Users"
+%table
+  %tr
+    %th Email
+    %th Encrypted Password
+    %th Reset Password Token
+    %th Reset Password Sent At
+    %th Remember Created At
+    %th Sign In Count
+    %th Current Sign In At
+    %th Last Sign In At
+    %th Current Sign In Ip
+    %th Last Sign In Ip
+  - for user in @users
+    %tr
+      %td= user.email
+      %td= user.encrypted_password
+      %td= user.reset_password_token
+      %td= user.reset_password_sent_at
+      %td= user.remember_created_at
+      %td= user.sign_in_count
+      %td= user.current_sign_in_at
+      %td= user.last_sign_in_at
+      %td= user.current_sign_in_ip
+      %td= user.last_sign_in_ip
+      %td= link_to "Show", user
+      %td= link_to "Edit", edit_user_path(user)
+      %td= link_to "Destroy", user, :confirm => 'Are you sure?', :method => :delete
+%p= link_to "New User", new_user_path

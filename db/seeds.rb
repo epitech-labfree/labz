@@ -11,7 +11,7 @@
 #
 g = Group.create(:name => "root", :description => "Users in this groups have all rights on Labz, you may propagate this on ur service")
 Group.create(:name => "can_register_app", :description => "Users in this groups can register applications, and edit their own apps")
-Group.create(:name => "apps", :description => "Users in this groups are applications"
-root = User.create(:email => "admin@admin.org", :password => "changeme")
+Group.create(:name => "apps", :description => "Users in this groups are applications")
+root = User.create(:login => "root", :email => "admin@admin.org", :password => "changeme")
 root.groups << g
 

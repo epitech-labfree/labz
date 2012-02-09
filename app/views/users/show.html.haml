@@ -1,0 +1,36 @@
+- title "User"
+%p
+  %strong Email:
+  = @user.email
+%p
+  %strong Encrypted Password:
+  = @user.encrypted_password
+%p
+  %strong Reset Password Token:
+  = @user.reset_password_token
+%p
+  %strong Reset Password Sent At:
+  = @user.reset_password_sent_at
+%p
+  %strong Remember Created At:
+  = @user.remember_created_at
+%p
+  %strong Sign In Count:
+  = @user.sign_in_count
+%p
+  %strong Current Sign In At:
+  = @user.current_sign_in_at
+%p
+  %strong Last Sign In At:
+  = @user.last_sign_in_at
+%p
+  %strong Current Sign In Ip:
+  = @user.current_sign_in_ip
+%p
+  %strong Last Sign In Ip:
+  = @user.last_sign_in_ip
+%p
+  = link_to "Edit", edit_user_path(@user)
+  |
+  \#{link_to "Destroy", @user, :confirm => 'Are you sure?', :method => :delete} |
+  \#{link_to "View All", users_path}

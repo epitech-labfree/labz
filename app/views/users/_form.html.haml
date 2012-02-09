@@ -1,0 +1,43 @@
+= form_for @user do |f|
+  = f.error_messages
+  %p
+    = f.label :email
+    %br/
+    = f.text_field :email
+  %p
+    = f.label :encrypted_password
+    %br/
+    = f.text_field :encrypted_password
+  %p
+    = f.label :reset_password_token
+    %br/
+    = f.text_field :reset_password_token
+  %p
+    = f.label :reset_password_sent_at
+    %br/
+    = f.datetime_select :reset_password_sent_at
+  %p
+    = f.label :remember_created_at
+    %br/
+    = f.datetime_select :remember_created_at
+  %p
+    = f.label :sign_in_count
+    %br/
+    = f.number_field :sign_in_count
+  %p
+    = f.label :current_sign_in_at
+    %br/
+    = f.datetime_select :current_sign_in_at
+  %p
+    = f.label :last_sign_in_at
+    %br/
+    = f.datetime_select :last_sign_in_at
+  %p
+    = f.label :current_sign_in_ip
+    %br/
+    = f.text_field :current_sign_in_ip
+  %p
+    = f.label :last_sign_in_ip
+    %br/
+    = f.text_field :last_sign_in_ip
+  %p= f.submit
