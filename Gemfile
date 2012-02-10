@@ -40,6 +40,7 @@ gem "oauth-plugin", ">= 0.4.0.pre1"
 gem "haml"
 gem "cancan"
 gem "therubyracer"
+gem "faker"
 
 group :dev do
   gem "haml-rails"
@@ -49,3 +50,5 @@ group :dev do
 end
 
 gem "mocha", :group => :test
+gem 'twitter-bootstrap-rails'
+

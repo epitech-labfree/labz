@@ -1,6 +1,14 @@
 class UsersController < ApplicationController
-  before_filter :login_or_oauth_required
+  oauthenticate :except => [:new, :create]
+  #before_filter :test
   authorize_resource
+
+  def test
+    puts "Im in UsersController"
+    puts current_user
+    puts current_token.inspect
+    puts current_client_application.inspect
+  end
 
   def index
     @users = User.all
@@ -13,8 +21,11 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.html
       format.json do
-        u = { :login => @user.email.split('@')[0],
-          :groups => @user.groups.map {|g| g.name} }
+        u = {
+          :login => @user.login, :uid => @user.id,
+          :email => @user.email,
+          :groups => @user.groups.map {|g| g.name}
+        }
         render :json => u
       end
     end

@@ -1,6 +1,6 @@
 require 'oauth/controllers/provider_controller'
 class OauthController < ApplicationController
-  before_filter :print_all
+  #before_filter :print_all
   include OAuth::Controllers::ProviderController
 
   protected
@@ -12,8 +12,8 @@ class OauthController < ApplicationController
 
   # should authenticate and return a user if valid password.
   # This example should work with most Authlogic or Devise. Uncomment it
-  def authenticate_user(username,password)
-    user = User.find_by_email params[:username]
+  def authenticate_user(username, password)
+    user = User.find_by_login params[:username]
     if user && user.valid_password?(params[:password])
       user
     else
